@@ -1,4 +1,5 @@
 ### Variables in main.R
+VARIANT_INPUT_FOLDER = "ukb_variants"
 FILTERED_VARIANT_FILE_SUFFIX = "_filtered_mut.csv"
 VARIANT_PREDICTION_FILE_SUFFIX = "_all_weights.csv"
 VARIANT_PREDICTION_FILE_COLUMNS_TO_KEEP = c(

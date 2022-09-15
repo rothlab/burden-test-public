@@ -44,7 +44,6 @@ res = lapply(unique(phenotypes$phenotype), function(pId) {
   colnames(res) = pId
   return(res)
 })
-saveRDS(res, "cache/measurements_merged.rds")
 eids = measurements[, .(eid)]
 measurements = do.call(cbind, append(list(eids), res))
 rm(res)

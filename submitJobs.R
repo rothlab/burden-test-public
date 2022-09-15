@@ -25,7 +25,7 @@ if (length(args) > 0) {
 
 # List all variant effect prediction files
 # and use them to guide analysis
-varPredictionFilePaths = list.files("ukb_variants", VARIANT_PREDICTION_FILE_SUFFIX, full.names = T)
+varPredictionFilePaths = list.files(VARIANT_INPUT_FOLDER, VARIANT_PREDICTION_FILE_SUFFIX, full.names = T)
 
 # If no measurements cached, create them
 cachedMeasurementFilePath = sprintf(CACHED_MEASUREMENT_FILE_PATH, RAND_SEED)
@@ -50,7 +50,7 @@ if (length(completedJobs) > 0) {
 # Submit jobs
 lapply(jobsToSubmit, function(jobName) {
   varPredictionFilePath = sprintf(
-    "%s/%s%s", "ukb_variants", jobName, VARIANT_PREDICTION_FILE_SUFFIX)
+    "%s/%s%s", VARIANT_INPUT_FOLDER, jobName, VARIANT_PREDICTION_FILE_SUFFIX)
   jobScript = sprintf("Rscript src/main.R %s %s", varPredictionFilePath, runFolder)
   system2("submitjob.sh",
           args = c("-n", jobName, "-t", "6:00:00", "-m", "8G",

@@ -48,6 +48,7 @@ Here we document all parameters supported by the pipeline and their functions.
 
 | Parameter | Description | Default Value |
 | --- | --- | --- |
+| VARIANT_INPUT_FOLDER | The input folder for UKB variants | ukb_variants |
 | FILTERED_VARIANT_FILE_SUFFIX | The suffix of filtered variant files | _filtered_mut.csv |
 | VARIANT_PREDICTION_FILE_SUFFIX | The suffix of variant prediction files | _all_weights.csv |
 | VARIANT_PREDICTION_FILE_COLUMNS_TO_KEEP | Columns in variant prediction files to keep | *!incomplete list!* "#Uploaded_variation", "Gene", "Feature", ... |
